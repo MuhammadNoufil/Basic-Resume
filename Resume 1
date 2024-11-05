@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Interactive Resume</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+h1 {
+  background-color: navajowhite;
+}
+
+
+
+
+
+
+
+
+
+
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s easy-in-out;
+  }
+  
+  h1,
+  h2 {
+    text-align: center;
+    animation: slideindown ease-in-out;
+  }
+  
+  .sections {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    animation: fadeInup 1s ease-in-out
+  }
+  
+  .section {
+    flex-basis: 45%;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    animation: zoomin 1s ease-in-out;
+  }
+  
+  h3 {
+    margin-top: 0;
+    text-align: center;
+    animation: rotatein 1s ease-in-out;
+  }
+  
+  ul,  {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    animation: fadeinleft 1s ease-in-out;
+  }
+  
+  li {
+    margin-bottom: 10px;
+animation: slideinup 1s ease-in-out;
+  }
+  
+  .contact {
+    text-align: center;
+    margin-top: 40px;
+    animation: fadeInup 1s ease-in-out;
+  }
+  
+  .circle-image {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    display: block;
+    animation: flipinY 1s ease-in-out;
+  }
+  
+  footer {
+    text-align: center;
+    margin-top: 40px;
+    animation: fadeInup 1s ease-in-out;
+  }
+  
+  h3 {
+    color: #1CD5CA;
+  }
+  
+  
+  
+  
+  
+  
+  body {
+    background-color: navajowhite;
+  }
+  
+  #resume-preview {
+  animation: customAnimation 2s;
+}
+
+@keyframes customAnimation {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+  #resume-preview {
+  animation: fold 2s;
+}
+
+@keyframes fold {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.5);
+  }
+}
+  
+  
+  h2 {
+   color: brown;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</style>
+<body>
+  <div id="resume-preview">
+  </div>
+  
+  
+  
+  
+ 
+    <div class="container">
+      <h1>Basic Resume</h1>
+      <img src="InShot_20241009_2222067.jpg" alt="image" class="circle-image animate__animated animate__flipInY" />
+      <h2 class="animate__animated animate__slideInDown"><b>Muhammad Noufil</b></h2>
+      <h3 class="animate__animated animate__rotateIn"><b><i>Front-end Web Developer</i></b></h3>
+      <div class="sections">
+        <div class="section animate__animated animate__zoomIn">
+          <h2 class="animate__animated animate__slideInDown">About Me</h2>
+          <p class="animate__animated animate__fadeInLeft">
+            "Hello! I'm <b><i>Muhammad Noufil</i></b>, a seasoned web developer with 1+ years of experience in crafting engaging and efficient web applications. I'm passionate about leveraging HTML, CSS, JavaScript, and Next.js to create responsive and scalable solutions. I'm committed to staying current with industry trends and best practices. Let's build something amazing together!"
+          </p>
+        </div>
+        <div class="section animate__animated animate__zoomIn">
+          <h3 class="animate__animated animate__rotateIn">Skills</h3>
+          <ol class="animate__animated animate__fadeInLeft">
+            <li class="animate__animated animate__slideInUp">HTML</li>
+            <li class="animate__animated animate__slideInUp">CSS</li>
+            <li class="animate__animated animate__slideInUp">TypeScript</li>
+            <li class="animate__animated animate__slideInUp">Next.js</li>
+          </ol>
+        </div>
+        <div class="section animate__animated animate__zoomIn">
+          <h3 class="animate__animated animate__rotateIn">Education</h3>
+          <ul class="animate__animated animate__fadeInLeft">
+            <li class="animate__animated animate__slideInUp">Graduation of B.A in Business Accounts, Karachi University (2022-Present) </li>
+          </ul>
+        </div>
+        
+        <div class="contact animate__animated animate__fadeInUp">
+          <h2 class="animate__animated animate__slideInDown">Contact Me</h2>
+      <p>
+        Email: <b>muhammadnoufilrazaqadri@gmail.com</b>
+        </p>
+        <p>Phone:<b>(+92) 33-23036253</b></p>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </div>
+      <footer class="animate__animated animate__fadeInUp">
+        <div class="contact">
+          <h3 class="animate
+  
+  
+  
+  
+  
+  
