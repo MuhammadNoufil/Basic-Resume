@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3e8e41;
+}
+
+#resume-preview {
+    margin-top: 40px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: 800px;
+}
+
+
+h1 {
+ background-color: lightgrey ;
+}
+
+
+
+
+
+
+
+</style>
+<body>
+    <div class="container">
+        <h1>Dynamic Interactive Resume Part 1</h1>
+        <form id="resume-form">
+            <section>
+                <h2>Basic Information</h2>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name"><br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email"><br><br>
+                <label for="phone">Phone:</label>
+                <input type="text" id="phone" name="phone"><br><br>
+            </section>
+            <section>
+                <h2>Summary</h2>
+                <textarea id="summary" name="summary"></textarea>
+            </section>
+            
+            <section>
+              <h2>Experience</h2>
+              <button id="add-experience">Add Experience</button>
+              <div id="experience-list"></div>
+            </section>
+                
+                <div id="experience-list"></div>
+            </section>
+            <section>
+                <h2>Education</h2>
+              <button id="add-education">Add Education</button>
+                <div id="education-list"></div>
+            </section>
+            <section>
+<h2>Skills</h2>
+<input type="text" id="skill" placeholder="Enter skill">
+<button id="add-skill">Add Skill</button>
+
+
+<div id="skills-list"></div>
+</section>
+
+            <button id="generate-resume">Generate Resume</button>
+        </form>
+        <div id="resume-preview"></div>
+    </div>
+    <script src="main.js"></script>
+    
+    <script>
+    
+    function generateResume() {
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const summary = document.getElementById('summary').value;
+      const experience = document.getElementById('experience').value;
+      const education = document.getElementById('education').value;
+      const skills = document.getElementById('skills').value;
+    
+      const resumeHTML = `
+        <h1>${name}</h1>
+        <p>Email: ${email}</p>
+        <p>Phone: ${phone}</p>
+        <h2>Summary</h2>
+        <p>${summary}</p>
+        <h2>Experience</h2>
+        <p>${experience}</p>
+        <h2>Education</h2>
+        <p>${education}</p>
+        <h2>Skills</h2>
+        <p>${skills}</p>
+      `;
+    
+      document.getElementById('resume-preview').innerHTML = resumeHTML;
+    }
+    `
+    `
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      const addExperienceButton = document.getElementById("add-experience");
+const experienceListDiv = document.getElementById("experience-list");
+
+let experienceList = [];
+
+addExperienceButton.addEventListener("click", () => {
+    const companyName = prompt("Enter company name:");
+    const position = prompt("Enter position:");
+    const duration = prompt("Enter duration:");
+    const description = prompt("Enter description:");
+
+    const experience = {
+        companyName,
+        position,
+        duration,
+        description
+    };
+
+    experienceList.push(experience);
+    renderExperienceList();
+});
+
+function renderExperienceList() {
+    experienceListDiv.innerHTML = "";
+
+    experienceList.forEach((experience, index) => {
+        const experienceHtml = `
+            <div>
+                <h3>Experience ${index + 1}</h3>
+                <p>Company Name: ${experience.companyName}</p>
+                <p>Position: ${experience.position}</p>
+                <p>Duration: ${experience.duration}</p>
+                <p>Description: ${experience.description}</p>
+            </div>
+        `;
+
+        experienceListDiv.innerHTML += experienceHtml;
+    });
+}
+
+      const addEducationButton = document.getElementById("add-education");
+      const educationListDiv = document.getElementById("education-list");
+      
+      let educationList = [];
+      
+      addEducationButton.addEventListener("click", () => {
+        const institutionName = prompt("Enter institution name:");
+        const degree = prompt("Enter degree:");
+        const duration = prompt("Enter duration:");
+        const specialization = prompt("Enter specialization:");
+      
+        const education = {
+          institutionName,
+          degree,
+          duration,
+          specialization
+        };
+      
+        educationList.push(education);
+        renderEducationList();
+      });
+      
+      function renderEducationList() {
+        educationListDiv.innerHTML = "";
+      
+        educationList.forEach((education, index) => {
+          const educationHtml = `
+                  <div>
+                      <h3>Education ${index + 1}</h3>
+                      <p>Institution Name: ${education.institutionName}</p>
+                      <p>Degree: ${education.degree}</p>
+                      <p>Duration: ${education.duration}</p>
+                      <p>Specialization: ${education.specialization}</p>
+                  </div>
+              `;
+      
+          educationListDiv.innerHTML += educationHtml;
+        });
+      }
+      
+      
+      const addSkillButton = document.getElementById("add-skill");
+const skillInput = document.getElementById("skill");
+const skillsListDiv = document.getElementById("skills-list");
+
+let skillsList = [];
+
+addSkillButton.addEventListener("click", () => {
+    const skill = skillInput.value.trim();
+
+    if (skill !== "") {
+        skillsList.push(skill);
+        renderSkillsList();
+        skillInput.value = "";
+    } else {
+        alert("Please enter a skill");
+    }
+});
+
+function renderSkillsList() {
+    skillsListDiv.innerHTML = "";
+
+    skillsList.forEach((skill, index) => {
+        const skillHtml = `
+            <div>
+                <p>Skill ${index + 1}: ${skill}</p>
+            </div>
+        `;
+
+        skillsListDiv.innerHTML += skillHtml;
+    });
+}
+
+
+      
+      
+      
+      
+      
+      
+      
+      
+    </script>
+</body>
+</html>
