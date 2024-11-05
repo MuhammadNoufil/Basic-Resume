@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Resume</title>
+    <link rel="stylesheet" href="style.css">
+<script src="main.js"></script>
+
+
+
+
+      
+      
+      
+    </script>
+</head>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: navajowhite ;
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3e8e41;
+}
+
+#resume-preview {
+    margin-top: 40px;
+    border: 1px solid #ddd;
+    padding: 20px;
+}
+
+
+h1 {
+  background-color: lightskyblue;
+  width: 300px;
+  height: 100px;
+}
+
+
+
+
+
+
+
+
+</style>
+<body>
+    <div class="container">
+        <h1>Dynamic Interactive Resume Part 2</h1>
+        <form id="resume-form">
+            <section>
+                <h2>Basic Information</h2>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name"><br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email"><br><br>
+                <label for="phone">Phone:</label>
+                <input type="text" id="phone" name="phone"><br><br>
+            </section>
+            <section>
+                <h2>Summary</h2>
+                <textarea id="summary" name="summary"></textarea>
+            </section>
+            <section>
+                <h2>Experience</h2>
+                <button id="add-experience">Add Experience</button>
+                <div id="experience-list"></div>
+            </section>
+            <section>
+                <h2>Education</h2>
+                <button id="add-education">Add Education</button>
+                <div id="education-list"></div>
+            </section>
+            <section>
+                <h2>Skills</h2>
+                <input type="text" id="skill" name="skill">
+                <button id="add-skill">Add Skill</button>
+                <div id="skills-list"></div>
+            </section>
+            
+            <button id="generate-resume">Generate Resume</button>
+<div id="resume-preview" contenteditable="true"></div>
+
+    </div>
+        <script>
+      const form = document.getElementById("resume-form");
+const resumePreview = document.getElementById("resume-preview");
+
+let experienceList = [];
+let educationList = [];
+let skillsList = [];
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+});
+
+document.getElementById("add-experience").addEventListener("click", () => {
+    const experience = {
+        company: prompt("Enter company name:"),
+        position: prompt("Enter position:"),
+        duration: prompt("Enter duration:"),
+        description: prompt("Enter description:")
+    };
+    experienceList.push(experience);
+    renderExperienceList();
+});
+
+document.getElementById("add-education").addEventListener("click", () => {
+    const education = {
+        institution: prompt("Enter institution name:"),
+        degree: prompt("Enter degree:"),
+        duration: prompt("Enter duration:")
+    };
+    educationList.push(education);
+    renderEducationList();
+});
+
+document.getElementById("add-skill").addEventListener("click", () => {
+    const skill = document.getElementById("skill").value;
+    skillsList.push(skill);
+    renderSkillsList();
+    document.getElementById("skill").value = "";
+});
+
+document.getElementById("generate-resume").addEventListener("click", () => {
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+    const summary = document.getElementById("summary").value;
+
+    const resumeHtml = 
+        <h1>${name}</h1>
+
+
+const generateResumeButton = document.getElementById("generate-resume");
+const resumePreviewDiv = document.getElementById("resume-preview");
+const nameInput = document.getElementById("name");
+const emailInput = document.getElementById("email");
+const phoneInput = document.getElementById("phone");
+const summaryInput = document.getElementById("summary");
+const experienceListDiv = document.getElementById("experience-list");
+const educationListDiv = document.getElementById("education-list");
+const skillsListDiv = document.getElementById("skills-list");
+
+generateResumeButton.addEventListener("click", () => {
+const name = nameInput.value;
+const email = emailInput.value;
+const phone = phoneInput.value;
+const summary = summaryInput.value;
+
+const resumeHtml = `<h1>${name}</h1> <p>Email: ${email}</p> <p>Phone: ${phone}</p> <h2>Summary</h2> <p>${summary}</p> <h2>Experience</h2> ${experienceListDiv.innerHTML} <h2>Education</h2> ${educationListDiv.innerHTML} <h2>Skills</h2> ${skillsListDiv.innerHTML}`;
+
+resumePreviewDiv.innerHTML = resumeHtml;
+resumePreviewDiv.contentEditable = "true";
+resumePreviewDiv.style.border = "1px solid #ccc";
+resumePreviewDiv.style.padding = "20px";
+resumePreviewDiv.style.width = "800px";
+resumePreviewDiv.style.margin = "40px auto";
+});
+
+
+
+
+
+      
+      
+      
+    </script>
+
+    
+</body>
+</html>
